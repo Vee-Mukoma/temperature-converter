@@ -1,0 +1,219 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root {
+    --bg:           #1a0a2e;
+    --surface:      #2d1b4e;
+    --card:         #3d2466;
+    --pink:         #ff6eb4;
+    --purple:       #a855f7;
+    --light-purple: #c084fc;
+    --white:        #ffffff;
+    --muted:        #c4a8e0;
+    --border:       #5b3485;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image:
+        radial-gradient(ellipse at 10% 10%, rgba(255,110,180,0.15) 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 90%, rgba(168,85,247,0.15) 0%, transparent 50%);
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    padding: 4rem 2rem 2rem;
+}
+
+header h1 {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 700;
+    background: linear-gradient(135deg, var(--pink), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.8rem;
+}
+
+header p {
+    color: var(--muted);
+    font-size: 1rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+}
+
+/* CONVERTER SECTION */
+#converter {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 480px;
+    margin: 2rem auto;
+    box-shadow:
+        0 0 40px rgba(255,110,180,0.1),
+        0 0 80px rgba(168,85,247,0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+#converter::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--pink), var(--purple), var(--pink));
+    background-size: 200%;
+    animation: shimmer 3s linear infinite;
+}
+
+@keyframes shimmer {
+    0%   { background-position: 0%; }
+    100% { background-position: 200%; }
+}
+
+/* LABEL */
+label {
+    display: block;
+    color: var(--light-purple);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.6rem;
+    margin-top: 1.5rem;
+}
+
+label:first-child {
+    margin-top: 0;
+}
+
+/* INPUT */
+input[type="number"] {
+    width: 100%;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="number"]:focus {
+    border-color: var(--pink);
+    box-shadow: 0 0 12px rgba(255,110,180,0.3);
+}
+
+/* SELECT */
+select {
+    width: 100%;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+select:focus {
+    border-color: var(--purple);
+    box-shadow: 0 0 12px rgba(168,85,247,0.3);
+}
+
+select option {
+    background-color: var(--surface);
+}
+
+/* BUTTON */
+#convert {
+    width: 100%;
+    background: linear-gradient(135deg, var(--pink), var(--purple));
+    border: none;
+    border-radius: 8px;
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 1rem;
+    cursor: pointer;
+    margin-top: 2rem;
+    transition: opacity 0.3s, transform 0.2s, box-shadow 0.3s;
+}
+
+#convert:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255,110,180,0.4);
+}
+
+#convert:active {
+    transform: scale(0.98);
+}
+
+/* RESULTS SECTION */
+#result {
+    background-color: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 2rem;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto 3rem;
+    box-shadow: 0 0 40px rgba(168,85,247,0.1);
+}
+
+#result h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: linear-gradient(135deg, var(--pink), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--border);
+}
+
+#convertedValue {
+    color: var(--muted);
+    font-size: 1rem;
+    line-height: 2;
+}
+
+/* FOOTER */
+footer {
+    margin-top: auto;
+    padding: 2rem;
+    text-align: center;
+    color: var(--border);
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+}
