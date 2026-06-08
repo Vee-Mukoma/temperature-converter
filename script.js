@@ -8,7 +8,11 @@ convertButton.onclick = function() {
     const from_unit = fromUnit.value;
     const to_unit = toUnit.value;
     const temp = parseFloat(temperature.value);
-    console.log(`Temperature: ${temp}, From Unit: ${from_unit}, To Unit: ${to_unit}`);
+
+    if (isNaN(temp)) {
+        result.textContent = "Please enter a valid temperature.";
+        return;
+    }
 
     switch(from_unit){
         case "celsius":
