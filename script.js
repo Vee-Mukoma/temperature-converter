@@ -1,5 +1,4 @@
 const temperature = document.getElementById('temperature');
-const unit = document.getElementById('unit');
 const convertButton = document.getElementById('convert');
 const result = document.getElementById('convertedValue');
 const fromUnit = document.getElementById("fromUnit");
