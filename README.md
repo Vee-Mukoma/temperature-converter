@@ -2,6 +2,10 @@
 
 A modern, responsive temperature converter web app built with HTML, CSS, and JavaScript. It allows users to convert temperatures between Celsius, Fahrenheit, and Kelvin with a clean and visually appealing interface.
 
+## Live Demo
+
+[Visit site](https://vee-mukoma.github.io/temperature-converter/)
+
 ## 🚀 Features
 
 - Convert between:
