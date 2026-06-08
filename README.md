@@ -60,7 +60,6 @@ Temperature-Converter/
 ├── script.js
 └── README.md
 
-
 ## ▶️ How to Run
 
 1. Clone the repository
